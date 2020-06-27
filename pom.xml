@@ -11,6 +11,7 @@
 		project faster.</description>
 
 	<modules>
+		<module>message-service</module>
 		<module>security-service</module>
 	</modules>
 
@@ -28,7 +29,7 @@
 		<spring-boot-starter-test>2.3.1.RELEASE</spring-boot-starter-test>
 
 		<!-- Versions for other dependencies -->
-		<spring-boot-starter-security.version>2.3.1.RELEASE</spring-boot-starter-security.version>
+		<spring-boot-dependencies.version>2.2.8.RELEASE</spring-boot-dependencies.version>
 		<jjwt.version>0.9.1</jjwt.version>
 		<javax.servlet-api.version>4.0.1</javax.servlet-api.version>
 
@@ -41,11 +42,13 @@
 
 	<dependencyManagement>
 		<dependencies>
-			<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security -->
+			<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies -->
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-starter-security</artifactId>
-				<version>${spring-boot-starter-security.version}</version>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring-boot-dependencies.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
 			</dependency>
 
 			<!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt -->
@@ -60,7 +63,7 @@
 				<groupId>javax.servlet</groupId>
 				<artifactId>javax.servlet-api</artifactId>
 				<version>${javax.servlet-api.version}</version>
-				<scope>provided</scope>
+				<scope>import</scope>
 			</dependency>
 
 			<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test -->
